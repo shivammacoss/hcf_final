@@ -82,9 +82,9 @@ const Navbar = () => {
           {/* LOGO */}
           <Link to="/" style={{ display: "flex", alignItems: "center" }}>
             <img
-              src="Images/MainContentImages/HCfinvest_santa_claus_Theme_png (1).png"
+              src="/hcfinvest_orange_logo.png"
               height="50px"
-              alt="Logo"
+              alt="HCF Invest Logo"
               style={{ maxWidth: "150px", border: "0px solid red" }}
             />
           </Link>

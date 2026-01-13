@@ -405,11 +405,13 @@ const Dashboard = () => {
         onMouseEnter={() => setSidebarExpanded(true)}
         onMouseLeave={() => setSidebarExpanded(false)}
       >
-        {/* Logo - Icon only */}
+        {/* Logo */}
         <div className="p-4 flex items-center justify-center">
-          <div className="w-8 h-8 bg-accent-green rounded flex items-center justify-center">
-            <span className="text-black font-bold text-sm">⟨X</span>
-          </div>
+          <img 
+            src="/hcfinvest_orange_logo.png" 
+            alt="HCF Invest" 
+            className={`${sidebarExpanded ? 'h-10' : 'h-8'} transition-all duration-300`}
+          />
         </div>
 
         {/* Menu */}
