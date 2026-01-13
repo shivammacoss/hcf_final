@@ -453,12 +453,16 @@ const WalletPage = () => {
                             {tx.type === 'Transfer_From_Account' && <Download size={18} className="text-purple-500" />}
                             {tx.type === 'Account_Transfer_Out' && <ArrowUpCircle size={18} className="text-orange-500" />}
                             {tx.type === 'Account_Transfer_In' && <ArrowDownCircle size={18} className="text-teal-500" />}
+                            {tx.type === 'IB_Commission' && <Users size={18} className="text-yellow-500" />}
+                            {tx.type === 'System' && <RefreshCw size={18} className="text-gray-500" />}
                             <div>
                               <span className="text-white">
                                 {tx.type === 'Transfer_To_Account' ? 'To Trading Account' : 
                                  tx.type === 'Transfer_From_Account' ? 'From Trading Account' : 
                                  tx.type === 'Account_Transfer_Out' ? 'Account Transfer (Out)' :
                                  tx.type === 'Account_Transfer_In' ? 'Account Transfer (In)' :
+                                 tx.type === 'IB_Commission' ? 'IB Commission' :
+                                 tx.type === 'System' ? 'System' :
                                  tx.type}
                               </span>
                               {tx.tradingAccountName && (
@@ -474,9 +478,9 @@ const WalletPage = () => {
                           </div>
                         </td>
                         <td className={`py-4 px-4 font-medium ${
-                          tx.type === 'Deposit' || tx.type === 'Transfer_From_Account' || tx.type === 'Account_Transfer_In' ? 'text-green-500' : 'text-red-500'
+                          tx.type === 'Deposit' || tx.type === 'Transfer_From_Account' || tx.type === 'Account_Transfer_In' || tx.type === 'IB_Commission' ? 'text-green-500' : 'text-red-500'
                         }`}>
-                          {tx.type === 'Deposit' || tx.type === 'Transfer_From_Account' || tx.type === 'Account_Transfer_In' ? '+' : '-'}${tx.amount.toLocaleString()}
+                          {tx.type === 'Deposit' || tx.type === 'Transfer_From_Account' || tx.type === 'Account_Transfer_In' || tx.type === 'IB_Commission' ? '+' : '-'}${tx.amount.toLocaleString()}
                         </td>
                         <td className="py-4 px-4 text-gray-400">
                           {tx.type === 'Transfer_To_Account' || tx.type === 'Transfer_From_Account' || tx.type === 'Account_Transfer_Out' || tx.type === 'Account_Transfer_In' ? 'Internal' : tx.paymentMethod}

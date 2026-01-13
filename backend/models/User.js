@@ -112,6 +112,10 @@ const userSchema = new mongoose.Schema({
   passwordChangedAt: {
     type: Date,
     default: null
+  },
+  mysqlUserId: {
+    type: Number,
+    default: null
   }
 })
 
